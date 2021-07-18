@@ -32,9 +32,16 @@ const pedirCarta = () => {
     return carta;
 }
 
+// Funcion para obtener el valor de una carta
+const valorCarta = (carta) => {
+    const valor = carta.substring(0, carta.length-1);
 
-deck = crearDeck();
-console.info(deck);
-let carta = pedirCarta();
-console.info(carta);
-console.info(deck);
+    return    ( isNaN(valor) ) ?
+                    (( valor === 'A' ) ? 11 : 10):
+                    valor * 1;
+}
+
+valorCarta('5C');
+valorCarta('10C');
+valorCarta('KC');
+valorCarta('AC');
